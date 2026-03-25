@@ -53,7 +53,7 @@ class CompanyController extends Controller
             ->leftJoin('companies', 'companies.id', '=', 'employees.company_id')
             ->where('employees.company_id', '=', $company->id)
             ->select('employees.*', 'companies.name')
-            ->paginate(6);
+            ->paginate(5);
 
         $totalEmployees = DB::table('employees')
             ->leftJoin('companies', 'companies.id', '=', 'employees.company_id')

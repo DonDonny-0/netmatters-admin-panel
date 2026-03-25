@@ -5,7 +5,7 @@
             <p>A full run down of the company</p>
         </div>
         <div class="text-2xl">
-            <a class="hover:underline" href="/companies">Return to List</a>
+            <a class="border p-2 border-white/20 rounded-xs bg-white/10 hover:border-white/40 transition-colors duration-200" href="/companies">Return to List</a>
         </div>
     </div>
     <div class="flex flex-row justify-between my-16 rounded-xs border border-white/10 bg-white/15 p-4 ">
@@ -34,14 +34,14 @@
         </div>
         <div class="flex flex-row float-end mt-6">
             <div class="mt-auto pb-3">
-                <a href="/companies/{{ $company->id }}/edit" class="p-3 bg-blue-500 border border-blue-500 hover:border-blue-600 font-bold text-lg rounded-sm hover:bg-blue-600 cursor-pointer">Edit</a>
+                <a href="/companies/{{ $company->id }}/edit" class="p-3 text-xl border p-2 border-white/20 rounded-xs bg-white/10 hover:border-white/40 transition-colors duration-200 cursor-pointer">Edit</a>
             </div>
             <form class="mt-auto pl-4" method="POST" action="/companies/{{ $company->id }}">
 
                 @csrf
                 @method('DELETE')
 
-                <button class="p-3 bg-red-500 font-bold text-lg rounded-sm hover:bg-red-600 cursor-pointer">Remove</button>
+                <button class="p-3 text-xl border p-2 border-white/20 rounded-xs bg-white/10 hover:border-white/40 transition-colors duration-200 cursor-pointer">Remove</button>
             </form>
         </div>
     </div>
@@ -66,7 +66,13 @@
 
     {{-- Employee list for desktop view --}}
 
-    <div class="hidden xl:grid grid-cols-3 mt-8 mx-auto gap-8">
+    <div class="hidden xl:grid grid-cols-1 mx-auto">
+        <div class="grid p-2 grid-cols-4 border border-white/50 justify-between bg-white/5 rounded-t-sm transition-colors duration-200">
+            <h1 class="font-bold">Employee Name</h1>
+            <h1 class="font-bold">Email</h1>
+            <h1 class="font-bold">Phone Number</h1>
+            <h1 class="font-bold">Company</h1>
+        </div>
         @foreach($pageEmployees as $employee)
             <x-employees-panel :$employee />
         @endforeach

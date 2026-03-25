@@ -1,6 +1,11 @@
 @props(['company'])
 
-<a href="/companies/{{ $company->id }}" class="flex flex-row justify-between border p-2 border-white/20 rounded-xs bg-white/7.5 hover:border-white transition-colors duration-200">
-    <h1 class="text-left text-lg font-bold my-auto">{{ $company->name }}</h1>
-    <x-company-logo logo="{{ $company->logo }}" width=60 />
-</a>
+<div class="relative flex flex-row border border-white/10 justify-between text-left p-2 bg-white/10 rounded-sm hover:border-white transition-colors duration-200">
+    <a class="absolute top-0 left-0 right-0 bottom-0" href="/companies/{{ $company->id }}"></a>
+    <div class="grid grid-cols-1 w-3xl">
+        <div class="flex">
+            <x-company-logo width=50 />
+            <p class="ml-2">{{ $company->name }}</p>
+        </div>
+    </div>
+</div>

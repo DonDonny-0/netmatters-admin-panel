@@ -18,10 +18,13 @@
 
     {{-- Nav bar for desktop view --}}
 
-    <div class="hidden sm:flex space-x-6 font-bold text-xl">
-        <a href="/">Dashboard</a>
-        <a href="/employees">Employees</a>
-        <a href="/companies">Companies</a>
+    <div class="hidden sm:flex items-center flex-row text-center space-x-6 font-bold text-xl justify-evenly w-md mx-auto">
+        
+        <div><a class="mr-0 pb-10" href="/">Dashboard</a></div>
+        <div><a class="mr-0 pb-10" href="/employees">Employees</a></div>
+        <div><a class="mr-0 pb-10" href="/companies">Companies</a></div>
+        
+        
 
         <form method="POST" action="/logout">
             @csrf

@@ -15,16 +15,22 @@ class AdminController extends Controller
     {
         $admin = User::first();
 
-        $new_companies = DB::table('companies')->limit(9)->orderBy('id', 'desc')->get();
+        $new_companies = DB::table('companies')->limit(5)->orderBy('id', 'desc')->get();
+        $companies = DB::table('companies')->get();
+        $employees = DB::table('employees')->get();
+
 
         $new_employees = DB::table('companies')
             ->join('employees', 'employees.company_id', '=', 'companies.id')
-            ->limit(9)->orderBy('id', 'desc')->select('employees.*', 'companies.name', 'companies.logo')->get();
+            ->limit(5)->orderBy('id', 'desc')->select('employees.*', 'companies.name', 'companies.logo')->get();
+
 
         return view('admin.index',[
             'admin' => $admin,
-            'companies' => $new_companies,
-            'employees' => $new_employees
+            'employees' => $employees,
+            'companies' => $companies,
+            'new_companies' => $new_companies,
+            'new_employees' => $new_employees,
         ]);
     }
 

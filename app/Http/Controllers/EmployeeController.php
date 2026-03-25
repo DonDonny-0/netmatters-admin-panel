@@ -30,7 +30,11 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('employee.create');
+        $companies = DB::table('companies')->get();
+
+        return view('employee.create', [
+            'companies' => $companies,
+        ]);
     }
 
     /**
