@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="flex flex-row justify-between items-center my-16">
+    <div class="flex flex-row justify-between items-center mt-16">
         <div>
             <h1 class="text-3xl font-bold">Company Details</h1>
             <p>A full run down of the company</p>
@@ -8,6 +8,7 @@
             <a class="border p-2 border-white/20 rounded-xs bg-white/10 hover:border-white/40 transition-colors duration-200" href="/companies">Return to List</a>
         </div>
     </div>
+
     <div class="flex flex-row justify-between my-16 rounded-xs border border-white/10 bg-white/15 p-4 ">
         <div>
             <x-company-logo width=350 logo="{{ $company->logo }}" />
@@ -48,7 +49,7 @@
 
     {{-- Employee list for phone view --}}
 
-    <div class="grid grid-cols-1 mt-8 gap-8 mx-auto md:hidden">
+    <div class="md:hidden grid grid-rows-3 mt-8 mx-auto lg:hidden w-full">
         @foreach($pageEmployees as $employee)
             <x-employees-panel :$employee />
         @endforeach
@@ -66,7 +67,7 @@
 
     {{-- Employee list for desktop view --}}
 
-    <div class="hidden xl:grid grid-cols-1 mx-auto">
+    <div class="hidden xl:grid grid-cols-1 w-full">
         <div class="grid p-2 grid-cols-4 border border-white/50 justify-between bg-white/5 rounded-t-sm transition-colors duration-200">
             <h1 class="font-bold">Employee Name</h1>
             <h1 class="font-bold">Email</h1>

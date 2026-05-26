@@ -26,4 +26,11 @@ class EmployeeFactory extends Factory
             'phone' => fake()->phoneNumber(),
         ];
     }
+
+    public function forCompany(Company $company): static
+    {
+        return $this->state(fn () => [
+            'company_id' => $company->id,
+        ]);
+    }
 }

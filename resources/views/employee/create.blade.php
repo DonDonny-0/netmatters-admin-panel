@@ -67,10 +67,10 @@
                     </div>
                 </div>
                 <div class="flex flex-col px-2 w-md mx-auto relative">
-                    <label for="companies" class="mt-6 font-bold">Company<span class="text-red-500 ml-2">*</span></label>
-                    <select name="companies" id="companies" name="company_id" class="bg-white/15 mt-2 rounded-xs p-3">
+                    <label for="company_id" class="mt-6 font-bold">Company<span class="text-red-500 ml-2">*</span></label>
+                    <select name="company_id" id="company_id" name="company_id" class="bg-white/15 mt-2 rounded-xs p-3">
                         @foreach ($companies as $company)
-                            <option class="text-black" value={{ $company->name }}>{{ $company->name }}</option>
+                            <option class="text-black" value={{ $company->id }}>{{ $company->name }}</option>
                         @endforeach
                     </select>
                     <x-errors name="company_id" />

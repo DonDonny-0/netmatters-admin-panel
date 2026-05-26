@@ -26,33 +26,25 @@
     
     @if (count($companies))
 
-
-        {{-- Employee list for phone view --}}
-
-        <div class="grid grid-cols-1 mt-8 gap-8 mx-auto lg:hidden">
-            @foreach($companies as $company)
-                <x-company-panel :$company />
-            @endforeach
-        </div>
-
-
-        {{-- Employee list for tablet view --}}
-
-        <div class="hidden lg:grid grid-cols-2 mt-8 mx-auto gap-8 2xl:hidden">
-            @foreach($companies as $company)
-                <x-company-panel :$company />
-            @endforeach
+        <div class="hidden md:grid p-2 grid-cols-3 border border-white/50 justify-between bg-white/5 rounded-t-sm transition-colors duration-200">
+            <h1 class="font-bold">Company Name</h1>
+            <h1 class="font-bold">Email</h1>
+            <h1 class="font-bold">Website</h1>
         </div>
 
 
         {{-- Employee list for desktop view --}}
 
-        <div class="grid p-2 grid-cols-3 border border-white/50 justify-between bg-white/5 rounded-t-sm transition-colors duration-200">
-            <h1 class="font-bold">Company Name</h1>
-            <h1 class="font-bold">Email</h1>
-            <h1 class="font-bold">Website</h1>
+        <div class="hidden md:grid grid-cols-1">
+            @foreach($companies as $company)
+                <x-company-panel :$company />
+            @endforeach
         </div>
-        <div class="hidden 2xl:grid grid-cols-1 mx-auto">
+
+
+        {{-- Employee list for phone view --}}
+
+        <div class="md:hidden grid grid-rows-3 mt-8 mx-auto lg:hidden w-full">
             @foreach($companies as $company)
                 <x-company-panel :$company />
             @endforeach

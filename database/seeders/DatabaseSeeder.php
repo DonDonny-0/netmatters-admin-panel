@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Company;
+use App\Models\Employee;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -22,5 +24,13 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => bcrypt('password'),
         ]);
+
+        $companies = Company::factory(10)->create();
+
+        foreach ($companies as $company) {
+            Employee::factory(10)->create([
+                'company_id' => $company->id,
+            ]);
+        }
     }
 }

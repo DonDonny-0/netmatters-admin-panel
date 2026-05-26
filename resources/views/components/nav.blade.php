@@ -1,36 +1,34 @@
 @auth
 
-    {{-- Nav bar for phone view --}}
-
-    <div class="space-x-6 font-bold text-center flex flex-col mr-auto text-3xl sm:hidden">
-        <a class="mr-0 pb-1" href="/">Dashboard</a>
-        <a class="mr-0 pb-1" href="/employees">Employees</a>
-        <a class="mr-0 pb-1" href="/companies">Companies</a>
-
-        <form method="POST" action="/logout">
-            @csrf
-            @method('DELETE')
-
-            <button class="cursor-pointer">Logout</button>
-        </form>
-    </div>
-
-
     {{-- Nav bar for desktop view --}}
 
-    <div class="hidden sm:flex items-center flex-row text-center space-x-6 font-bold text-xl justify-evenly w-md mx-auto">
+    <div class="flex items-center flex-row text-center space-x-6 font-bold text-xl w-md justify-evenly">
         
-        <div><a class="mr-0 pb-10" href="/">Dashboard</a></div>
-        <div><a class="mr-0 pb-10" href="/employees">Employees</a></div>
-        <div><a class="mr-0 pb-10" href="/companies">Companies</a></div>
-        
-        
+        <div class="hidden sm:inline-block">
+            <a class="mr-2 text-md" href="/">Dashboard</a>
+            <a class="mr-2 text-md" href="/employees">Employees</a>
+            <a class="mr-2 text-md" href="/companies">Companies</a>
 
-        <form method="POST" action="/logout">
-            @csrf
-            @method('DELETE')
+            <form class="text-md inline" method="POST" action="/logout">
+                @csrf
+                @method('DELETE')
 
-            <button class="cursor-pointer">Logout</button>
-        </form>
+                <button class="cursor-pointer">Logout</button>
+            </form>
+        </div>
+
+        <div class="inline-block sm:hidden">
+            <a class="mr-2 text-sm" href="/">Dashboard</a>
+            <a class="mr-2 text-sm" href="/employees">Employees</a>
+            <a class="mr-2 text-sm" href="/companies">Companies</a>
+
+            <form class="text-sm inline" method="POST" action="/logout">
+                @csrf
+                @method('DELETE')
+
+                <button class="cursor-pointer">Logout</button>
+            </form>
+        </div>
+    
     </div>
 @endauth
