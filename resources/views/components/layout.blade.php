@@ -27,8 +27,5 @@
     <main class="flex flex-col text-white mx-auto w-4/5">
         {{ $slot }}
     </main>
-    <footer>
-        footer here
-    </footer>
 </body>
 </html>

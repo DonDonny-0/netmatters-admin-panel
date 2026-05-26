@@ -6,7 +6,7 @@
             <p>A full list of every employee and their respective companies</p>
         </div>
         <div>
-            <a class="flex flex-row justify-center border p-2 border-gray-700/50 rounded-xs bg-gray-700/50 hover:border-white/50 transition-colors duration-200" href="/employees/create">
+            <a class="flex flex-row justify-center border p-2 mt-6 border-gray-700/50 rounded-xs bg-gray-700/50 hover:border-white/50 transition-colors duration-200" href="/employees/create">
                 <h1 class="text-xl">+ Add New Employee</h1>
             </a>
         </div>
@@ -36,7 +36,7 @@
     
         {{-- Company list for phone view --}}
 
-        <div class="md:hidden grid grid-rows-3 mt-8 mx-auto lg:hidden w-full">
+        <div class="md:hidden grid grid-rows-3 mx-auto lg:hidden w-full">
             @foreach($employees as $employee)
                 <x-employees-panel :$employee />
             @endforeach
