@@ -26,7 +26,7 @@
 
     @if (count($employees))
 
-        <div class="hidden md:grid p-2 grid-cols-4 border border-white/50 justify-between bg-white/5 rounded-t-sm transition-colors duration-200">
+        <div class="hidden lg:grid p-2 grid-cols-4 border border-white/50 justify-between bg-white/5 rounded-t-sm transition-colors duration-200">
             <h1 class="font-bold">Employee Name</h1>
             <h1 class="font-bold">Email</h1>
             <h1 class="font-bold">Phone Number</h1>
@@ -42,19 +42,9 @@
             @endforeach
         </div>
 
-
-        {{-- Company list for tablet view --}}
-
-        <div class="hidden lg:grid grid-cols-2 mt-8 mx-auto gap-8 2xl:hidden">
-            @foreach($employees as $employee)
-                <x-employees-panel :$employee />
-            @endforeach
-        </div>
-
-
         {{-- Company list for desktop view --}}
 
-        <div class="hidden 2xl:grid grid-cols-1">
+        <div class="hidden md:grid grid-cols-1">
             @foreach($employees as $employee)
                 <x-employees-panel :$employee />
             @endforeach

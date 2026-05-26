@@ -72,8 +72,11 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
+        $companies = DB::table('companies')->get();
+
         return view('employee.edit', [
-            'employee' => $employee
+            'employee' => $employee,
+            'companies' => $companies,
         ]);
     }
 

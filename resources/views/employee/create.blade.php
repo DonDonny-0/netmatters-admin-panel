@@ -41,6 +41,7 @@
         <div class="mb-4 ml-8 absolute -top-10 -left-8">
             <a href="/" class="mb-2 border p-2 border-gray-700/50 rounded-xs bg-gray-700/50 hover:border-white/50 transition-colors duration-200" href="/employees/create">Return to Dashboard</a>
         </div>
+        
         <form action="/employees/create" method="POST" class="text-left mx-auto w-md">
             @csrf
             <h1 class="py-8 w-md mx-auto text-3xl font-bold">Add a New Employee</h1>
